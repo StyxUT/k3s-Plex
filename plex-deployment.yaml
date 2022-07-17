@@ -56,15 +56,15 @@ spec:
         - name: "CLAIM"
           value: claim-RMjNee5yKwRmNj36pEWz 
         volumeMounts:
-        - name: plex
+        - name: k8s-pv01
           mountPath: /config
           subPath: plex/config
         - name: media
           mountPath: /data/media
       volumes:
-      - name: plex 
+      - name: k8s-pv01 
         persistentVolumeClaim:
-          claimName: synology-plex
+          claimName: synology-k8s-pv01
       - name: media
         persistentVolumeClaim:
           claimName: synology-media
